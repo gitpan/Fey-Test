@@ -1,3 +1,11 @@
+
+BEGIN {
+  unless ($ENV{RELEASE_TESTING}) {
+    require Test::More;
+    Test::More::plan(skip_all => 'these tests are for release candidate testing');
+  }
+}
+
 use strict;
 use warnings;
 
@@ -19,29 +27,5 @@ local $ENV{LC_ALL} = 'C';
 all_pod_files_spelling_ok;
 
 __DATA__
-APIs
-attribute's
-deflator
-deflators
-dbms
-dbh
-DBI
-fk
-FromSelect
-inflator
-iterator's
-lookup
-ORM
-metaclass
-metaclass's
-multi
-namespace
-nullable
-params
-rethrows
-SomeTable
-SQLite
-subref
-unhashed
-unsets
-username
+distros
+Rolsky
